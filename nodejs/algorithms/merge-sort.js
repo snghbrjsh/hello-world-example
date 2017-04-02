@@ -10,9 +10,15 @@ function mSort(arr, asc) {
     if(arr.length < 2 ) {
         return arr;
     } else {
+        /*
+        *   Divide the array in two half
+        */
         leftHalf = arr.slice(0, arr.length/2);
         rightHalf = arr.slice(arr.length/2, arr.length);
 
+        /*
+        *   Merge the divided array
+        */
         mergedArray = mergeElements( mSort(leftHalf, asc), mSort(rightHalf, asc) );
         return mergedArray;
     }
